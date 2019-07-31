@@ -1,0 +1,25 @@
+//Color variables:
+$darkpink-bg: #fdd7ea;
+$darkpink-txt: #f98dbe;
+$lightpink-bg: #fef1f8;
+$lightpink-txt: #fa9eca;
+$darkgrey-bg: #d7d7d7;
+$darkgrey-txt: #6b6b6b;
+$light-bg: #ffffff;
+$light-txt:#7f7f7f;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: url(./assets/calc_desktop.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
