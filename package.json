@@ -1,15 +1,14 @@
 {
   "name": "calc_app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple calculator app project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adam Wojnicki",
   "license": "ISC",
   "dependencies": {
     "npm": "^6.10.2",
