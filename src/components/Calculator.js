@@ -1,14 +1,30 @@
 import React from 'react';
 import Key from './Key';
 
-const Calculator = () => {
-    return (
-        <div className='calculator-face'>
+
+class Calculator extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            outputVal: ''
+        }
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput() {
+        this.setState({
+            outputVal: event.target.value
+        })
+    }
+
+    render() {
+        return(
+            <div className='calculator-face'>
             <div className='calc-output'>
-                <p>10101</p>
+                <p>{this.state.outputVal}</p>
             </div>
             <div className='calc-input'>
-                <input type='text'></input>
+                <input type='text' onChange={this.handleInput}></input>
             </div>
             <div className='key-container'>
                 <Key type='operator' value='C'/>
@@ -33,7 +49,8 @@ const Calculator = () => {
                 <Key type='operator' value='='/>
             </div>
         </div>
-    )
+        )
+    }
 }
 
 export default Calculator;
