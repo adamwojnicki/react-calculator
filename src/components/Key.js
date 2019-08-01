@@ -2,9 +2,9 @@ import React from 'react';
 
 const Key = (props) => {
     return (
-        <div className='key'>
+        <button className='key'>
             {props.value}
-        </div>
+        </button>
     )
 }
 
