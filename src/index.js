@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
-import Calculator from './components/Calculator';
+import Calculator from './Calculator';
 
 const App = () => {
     return (
