@@ -2,7 +2,7 @@ import React from 'react';
 import Key from './components/Key';
 import ClearKey from './components/ClearKey';
 import Input from './components/Input'
-import * as math from 'mathjs';
+import * as math from 'math.js';
 
 import './Calculator.scss'
 
@@ -25,7 +25,11 @@ class Calculator extends React.Component {
     }
 
     handleEqual() {
-        console.log('It works')
+        this.setState(
+            {
+                input: eval(this.state.input)
+            }
+        )
     }
 
     render() {
@@ -36,11 +40,11 @@ class Calculator extends React.Component {
                     <ClearKey handleClear={() => this.setState({input: ''})}>C</ClearKey>
                     <Key handleClick={this.handleInput}>+/-</Key>
                     <Key handleClick={this.handleInput}>%</Key>
-                    <Key handleClick={this.handleInput}>&divide;</Key>
+                    <Key handleClick={this.handleInput}>/</Key>
                     <Key handleClick={this.handleInput}>1</Key>
                     <Key handleClick={this.handleInput}>2</Key>
                     <Key handleClick={this.handleInput}>3</Key>
-                    <Key handleClick={this.handleInput}>&times;</Key>
+                    <Key handleClick={this.handleInput}>x</Key>
                     <Key handleClick={this.handleInput}>4</Key>
                     <Key handleClick={this.handleInput}>5</Key>
                     <Key handleClick={this.handleInput}>6</Key>
@@ -52,7 +56,7 @@ class Calculator extends React.Component {
                     <Key handleClick={this.handleInput}>0</Key>
                     <Key handleClick={this.handleInput}>.</Key>
                     <Key handleClick={this.handleInput}>DEL</Key>
-                    <Key handleClick={this.handleEqual}>=</Key>
+                    <Key handleClick={() => this.handleEqual()}>=</Key>
                 </div>
             </div>
         )
