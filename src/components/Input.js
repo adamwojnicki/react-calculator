@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Input = () => {
+const Input = (props) => {
     return (
         <div>
             <div className='calculator__input'>
-                <input type='text'></input>
+                {props.input}
             </div>
             <div className='calculator__output'>
                 <p></p>
