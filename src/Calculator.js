@@ -28,7 +28,7 @@ class Calculator extends React.Component {
     handleEqual() {
         this.setState(
             {
-                output: eval(this.state.input),
+                output: eval(this.state.input)
             }
         )
     }
@@ -68,7 +68,7 @@ class Calculator extends React.Component {
                     <Key handleClick={this.handleInput}>+</Key>
                     <Key handleClick={this.handleInput}>0</Key>
                     <Key handleClick={this.handleInput}>.</Key>
-                    <Key handleClick={this.handleDEL}>DEL</Key>
+                    <Key handleClick={() => this.handleDEL()}>DEL</Key>
                     <Key handleClick={() => this.handleEqual()}>=</Key>
                 </div>
             </div>

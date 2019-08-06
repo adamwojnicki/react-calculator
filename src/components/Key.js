@@ -6,7 +6,7 @@ const isKeyOperator = val => {
 
 const Key = props => (
     <div 
-        className={`calculator__keypad__key ${isKeyOperator(props.children) ? null : 'operator'}`}
+        className={`calculator__keypad__key ${isKeyOperator(props.children) ? '' : 'key--operator'}`}
         onClick={() => props.handleClick(props.children)}
     >
         {props.children}
