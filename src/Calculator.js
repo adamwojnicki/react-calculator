@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Key from './components/Key';
-import Input from './components/Input';
+import CalculatorHeader from './components/CalculatorHeader';
 
 import './Calculator.scss';
 
@@ -20,7 +20,7 @@ const Calculator = () => {
 
     return(
         <div className='calculator'>
-            <Input input={input} output={output} />
+            <CalculatorHeader input={input} output={output} />
             <div className='calculator__keypad'>
                 <Key handleClick={handleClear}>C</Key>
                 <Key handleClick={handleInput}>(</Key>
