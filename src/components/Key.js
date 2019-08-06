@@ -1,12 +1,12 @@
 import React from 'react';
 
 const isKeyOperator = val => {
-    return !isNaN(val) || val === "." 
+    return !isNaN(val) || val === "."
 }
 
 const Key = props => (
     <div 
-        className={`calculator__keypad__key ${isKeyOperator(props.children) ? '' : 'key--operator'}`}
+        className={`calculator__keypad__key ${isKeyOperator(props.children) ? null : 'key--operator'}`}
         onClick={() => props.handleClick(props.children)}
     >
         {props.children}

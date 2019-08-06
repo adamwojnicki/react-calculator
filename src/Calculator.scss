@@ -44,10 +44,10 @@
             color: $light-txt;
             background: $light-bg;
             cursor: pointer;
-            .key--operator {
-                background: $darkgrey-bg;
-                color: $darkgrey-txt;
-            }
+        }
+        .key--operator {
+            background: $darkgrey-bg;
+            color: $darkgrey-txt;
         }
     }
 }

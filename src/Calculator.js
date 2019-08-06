@@ -33,10 +33,6 @@ class Calculator extends React.Component {
         )
     }
 
-    handlePlusMinus() {
-        console.log('plusminus')
-    }
-
     handleDEL() {
         this.setState(
             {
@@ -51,8 +47,8 @@ class Calculator extends React.Component {
                 <Input input={this.state.input} output={this.state.output} />
                 <div className='calculator__keypad'>
                     <ClearKey handleClear={() => this.setState({input: '', output: ''})}>C</ClearKey>
-                    <Key handleClick={this.handlePlusMinus}>+/-</Key>
-                    <Key handleClick={this.handleInput}>%</Key>
+                    <Key handleClick={this.handleInput}>(</Key>
+                    <Key handleClick={this.handleInput}>)</Key>
                     <Key handleClick={this.handleInput}>/</Key>
                     <Key handleClick={this.handleInput}>1</Key>
                     <Key handleClick={this.handleInput}>2</Key>
