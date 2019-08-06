@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Key from './components/Key';
-import ClearKey from './components/ClearKey';
 import Input from './components/Input';
 
 import './Calculator.scss';
@@ -23,7 +22,7 @@ const Calculator = () => {
         <div className='calculator'>
             <Input input={input} output={output} />
             <div className='calculator__keypad'>
-                <ClearKey handleClear={handleClear}>C</ClearKey>
+                <Key handleClick={handleClear}>C</Key>
                 <Key handleClick={handleInput}>(</Key>
                 <Key handleClick={handleInput}>)</Key>
                 <Key handleClick={handleInput}>/</Key>
