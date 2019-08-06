@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Checking if the given key is a digit or an opeartor:
 const isKeyOperator = val => {
     return !isNaN(val) || val === "."
 }

@@ -1,75 +1,51 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Key from './components/Key';
 import ClearKey from './components/ClearKey';
-import Input from './components/Input'
-// import * as math from 'math.js';
+import Input from './components/Input';
 
-import './Calculator.scss'
+import './Calculator.scss';
 
+const Calculator = () => {
+    //Initial states:
+    const [input, setInput] = useState('');
+    const [output, setOutput] = useState('');
 
-class Calculator extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            input: '',
-            output: ''
-        }
-        this.handleInput = this.handleInput.bind(this);
+    //Key functions:
+    const handleInput = val => setInput(input + val);
+    const handleEqual = () => setOutput(eval(input));
+    const handleDEL = () => setInput(input.slice(0, -1));
+    const handleClear = () => {
+        setInput('');
+        setOutput('');
     }
 
-    handleInput(val) {
-        this.setState(
-            {
-                input: this.state.input + val
-            }
-        );
-    }
-
-    handleEqual() {
-        this.setState(
-            {
-                output: eval(this.state.input)
-            }
-        )
-    }
-
-    handleDEL() {
-        this.setState(
-            {
-                input: this.state.input.slice(0, -1)
-            }
-        )
-    }
-
-    render() {
-        return(
-            <div className='calculator'>
-                <Input input={this.state.input} output={this.state.output} />
-                <div className='calculator__keypad'>
-                    <ClearKey handleClear={() => this.setState({input: '', output: ''})}>C</ClearKey>
-                    <Key handleClick={this.handleInput}>(</Key>
-                    <Key handleClick={this.handleInput}>)</Key>
-                    <Key handleClick={this.handleInput}>/</Key>
-                    <Key handleClick={this.handleInput}>1</Key>
-                    <Key handleClick={this.handleInput}>2</Key>
-                    <Key handleClick={this.handleInput}>3</Key>
-                    <Key handleClick={this.handleInput}>*</Key>
-                    <Key handleClick={this.handleInput}>4</Key>
-                    <Key handleClick={this.handleInput}>5</Key>
-                    <Key handleClick={this.handleInput}>6</Key>
-                    <Key handleClick={this.handleInput}>-</Key>
-                    <Key handleClick={this.handleInput}>7</Key>
-                    <Key handleClick={this.handleInput}>8</Key>
-                    <Key handleClick={this.handleInput}>9</Key>
-                    <Key handleClick={this.handleInput}>+</Key>
-                    <Key handleClick={this.handleInput}>0</Key>
-                    <Key handleClick={this.handleInput}>.</Key>
-                    <Key handleClick={() => this.handleDEL()}>DEL</Key>
-                    <Key handleClick={() => this.handleEqual()}>=</Key>
-                </div>
+    return(
+        <div className='calculator'>
+            <Input input={input} output={output} />
+            <div className='calculator__keypad'>
+                <ClearKey handleClear={handleClear}>C</ClearKey>
+                <Key handleClick={handleInput}>(</Key>
+                <Key handleClick={handleInput}>)</Key>
+                <Key handleClick={handleInput}>/</Key>
+                <Key handleClick={handleInput}>1</Key>
+                <Key handleClick={handleInput}>2</Key>
+                <Key handleClick={handleInput}>3</Key>
+                <Key handleClick={handleInput}>*</Key>
+                <Key handleClick={handleInput}>4</Key>
+                <Key handleClick={handleInput}>5</Key>
+                <Key handleClick={handleInput}>6</Key>
+                <Key handleClick={handleInput}>-</Key>
+                <Key handleClick={handleInput}>7</Key>
+                <Key handleClick={handleInput}>8</Key>
+                <Key handleClick={handleInput}>9</Key>
+                <Key handleClick={handleInput}>+</Key>
+                <Key handleClick={handleInput}>0</Key>
+                <Key handleClick={handleInput}>.</Key>
+                <Key handleClick={handleDEL}>DEL</Key>
+                <Key handleClick={handleEqual}>=</Key>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default Calculator;
