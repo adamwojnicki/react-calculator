@@ -7,7 +7,7 @@ const Input = (props) => {
                 {props.input}
             </div>
             <div className='calculator__output'>
-                <p></p>
+                <p>{props.output}</p>
             </div>
         </div>
     )

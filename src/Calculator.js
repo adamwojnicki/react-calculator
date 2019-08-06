@@ -2,7 +2,7 @@ import React from 'react';
 import Key from './components/Key';
 import ClearKey from './components/ClearKey';
 import Input from './components/Input'
-import * as math from 'math.js';
+// import * as math from 'math.js';
 
 import './Calculator.scss'
 
@@ -11,7 +11,8 @@ class Calculator extends React.Component {
     constructor() {
         super();
         this.state = {
-            input: ''
+            input: '',
+            output: ''
         }
         this.handleInput = this.handleInput.bind(this);
     }
@@ -27,7 +28,19 @@ class Calculator extends React.Component {
     handleEqual() {
         this.setState(
             {
-                input: eval(this.state.input)
+                output: eval(this.state.input),
+            }
+        )
+    }
+
+    handlePlusMinus() {
+        console.log('plusminus')
+    }
+
+    handleDEL() {
+        this.setState(
+            {
+                input: this.state.input.slice(0, -1)
             }
         )
     }
@@ -35,16 +48,16 @@ class Calculator extends React.Component {
     render() {
         return(
             <div className='calculator'>
-                <Input input={this.state.input} />
+                <Input input={this.state.input} output={this.state.output} />
                 <div className='calculator__keypad'>
-                    <ClearKey handleClear={() => this.setState({input: ''})}>C</ClearKey>
-                    <Key handleClick={this.handleInput}>+/-</Key>
+                    <ClearKey handleClear={() => this.setState({input: '', output: ''})}>C</ClearKey>
+                    <Key handleClick={this.handlePlusMinus}>+/-</Key>
                     <Key handleClick={this.handleInput}>%</Key>
                     <Key handleClick={this.handleInput}>/</Key>
                     <Key handleClick={this.handleInput}>1</Key>
                     <Key handleClick={this.handleInput}>2</Key>
                     <Key handleClick={this.handleInput}>3</Key>
-                    <Key handleClick={this.handleInput}>x</Key>
+                    <Key handleClick={this.handleInput}>*</Key>
                     <Key handleClick={this.handleInput}>4</Key>
                     <Key handleClick={this.handleInput}>5</Key>
                     <Key handleClick={this.handleInput}>6</Key>
@@ -55,7 +68,7 @@ class Calculator extends React.Component {
                     <Key handleClick={this.handleInput}>+</Key>
                     <Key handleClick={this.handleInput}>0</Key>
                     <Key handleClick={this.handleInput}>.</Key>
-                    <Key handleClick={this.handleInput}>DEL</Key>
+                    <Key handleClick={this.handleDEL}>DEL</Key>
                     <Key handleClick={() => this.handleEqual()}>=</Key>
                 </div>
             </div>
