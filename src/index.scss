@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Oxygen Mono", sans-serif;
+  font-family: 'Samsung Sharp Sans Regular Regular', sans-serif;
 }
 
 .container {
-    width: 100%;
-    height: 100vh;
-    background: url(./assets/calc_desktop.jpg);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: url(./assets/calc_desktop.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
