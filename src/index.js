@@ -4,12 +4,10 @@ import './index.scss';
 
 import Calculator from './Calculator';
 
-const App = () => {
-    return (
-        <div className='container'>
-            <Calculator />
-        </div>
-    )
-}
+const App = () => (
+  <div className="container">
+    <Calculator />
+  </div>
+);
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
