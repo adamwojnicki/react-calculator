@@ -11,8 +11,15 @@ const Calculator = () => {
 
   // Key functions:
   const handleInput = val => setInput(input + val);
-  // eslint-disable-next-line
-  const handleEqual = () => setOutput(eval(input));
+
+  const handleEqual = () => {
+    try {
+      // eslint-disable-next-line
+      setOutput(eval(input) || '') + '';
+    } catch (err) {
+      setOutput('error');
+    }
+  };
   const handleDEL = () => setInput(input.slice(0, -1));
   const handleClear = () => {
     setInput('');
