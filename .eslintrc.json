@@ -17,7 +17,6 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "linebreak-style": 0,
-    "no-eval": [0, { "allowIndirect": true }]
+    "linebreak-style": 0
   }
 }
