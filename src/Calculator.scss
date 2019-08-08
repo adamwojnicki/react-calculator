@@ -40,11 +40,21 @@
       height: 4em;
       color: $light-txt;
       background: $light-bg;
+      transition: 0.4s;
       cursor: pointer;
+      &:hover {
+        color: $lightpink-txt;
+        background: $lightpink-bg;
+      }
     }
     .key--operator {
       background: $darkgrey-bg;
       color: $darkgrey-txt;
+      transition: 0.4s;
+      &:hover {
+        color: $darkpink-txt;
+        background: $darkpink-bg;
+      }
     }
   }
 }
